@@ -1,0 +1,71 @@
+body{
+	/*background-image: url('images/background.jpg');*/
+	
+}
+
+.navbar {
+   background-color: transparent;
+   background: transparent;
+   border-color: transparent;
+}
+
+.navbar .navContainer{
+	font-size: 2.2em;
+	font-family: 'Jura', sans-serif;
+}
+
+.navbar .logo {
+	font-size: 2em;
+}
+
+.navbar li { color: #000 } 
+
+/*.mainDiv{
+	display: inline-block;
+	font-size:3.1em;
+	color: white;
+	text-align: center;
+	position: relative;
+	top:220px;
+	height:150px;
+	width: 350px;
+	border: 5px solid white;
+}*/
+
+
+.mainDiv, .portfolioDiv, .resumeDiv{
+	display: inline-block;
+	font-size:3em;
+	color: white;
+	text-align: center;
+	position: absolute;
+	top:220px;
+	height:150px;
+	width: 350px;
+	border: 5px solid white;
+	transition: all linear 0.5s;
+}
+.portfolioDiv.ng-hide,.resumeDiv.ng-hide,.mainDiv.ng-hide {
+  opacity: 0;
+}
+.portfolioDiv.ng-show.resumeDiv.ng-show,.mainDiv.ng-show {
+  opacity: 1;
+}
+#portfolioText,#resumeText,#mainText{
+	position: relative;
+	top:35%;
+}
+
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+.portfolio {
+    height: 100%;
+    padding-top: 150px;
+    text-align: center;
+    background-color: green;
+    height: 300px;
+    display:block;
+}
