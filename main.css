@@ -82,10 +82,7 @@ html {
   background-color:black;
   font-family: 'Jura', sans-serif;
 }
-.monkey{
-  font-family: 'Jura', sans-serif;
-  background-color:black; color:green; text-shadow: 2px 2px black;
-}
+
 .portfolioDescriptorBoken{
   font-weight:bold;
   color:red;
@@ -169,12 +166,88 @@ html {
 #boken{
     
     /*border:3px solid black;*/
-    height: 300px;
+    height: 200px;
     width: 274px;
 }
 #boken img{
+
     padding:0px;
 }
+.monkey{
+  font-family: 'Jura', sans-serif;
+  background-color:black; color:green; text-shadow: 2px 2px black;
+}
+
+/*@media only screen and (min-height: 50vh) {
+    
+}*/
+/*.aboutText h3{
+    color: yellow;
+}*/
+/*.aboutRow1 div:{
+    margin-top: 5%;
+}*/
+.firstAboutDiv{
+  margin-top: -5%;
+}
+.firstRow{
+  margin-top: -2%;
+}
+@media screen 
+  and (min-height: 850px)  
+  {
+    
+    .firstAboutDiv{
+      margin-top:0% ;
+    }
+    .aboutText h3{
+      color: red;
+    }
+    .aboutRow1:{
+      margin-top: 0%;
+    }
+    .about-container{
+      height: 83vh;
+    }
+
+}
+/*1441X774   max 849*/
+@media screen 
+  and (min-height: 774px; 
+    )  
+  {
+    
+    .firstAboutDiv{
+      margin-top:-10% ;
+    }
+    /*.aboutText h3{
+      color: red;
+    }*/
+    .aboutRow1:{
+      margin-top: 0%;
+    }
+    .about-container{
+      height: 83vh;
+    }
+
+}
+
+.about-container{
+  height: 80vh;
+}
+
+
+/* ----------- Retina Screens ----------- */
+/*@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) { 
+    .monkey{
+      font-family: 'Jura', sans-serif;
+      background-color:black; color:yellow; text-shadow: 2px 2px black;
+    }
+}*/
 .bokenDescription {
   font-family: 'Jura', sans-serif;
   margin-top:75px;
