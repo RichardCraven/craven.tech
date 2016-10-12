@@ -135,19 +135,17 @@ back-img="images/beautiful.jpg"
 	</section>
 
 
-	<!-- section2 -->
+	<!-- Portfolio -->
 	<section id='portfolio' class='portfolio'>
 		<div class='container-fluid'>
 			<div class='row firstRow' >
 				<!-- cahootsScreenshot.png -->
-				<div class="col-md-3"> 
-					<div class="animatedParent" style='margin:20px' >
+				<div class="col-md-3 col-md-offset-2"> 
+					<div class="animatedParent" style='margin:20px' ng-click='cahootsLink()' >
 						<div data-appear-top-offset='-500px' class="animated bounceIn" id='cahoots'>
-							<a href="http://cahoots.live">
 							<img src='images/cahootsScreenshot.png' style='max-width:100%;
 		                    max-height:100%;'>
 							<h2 class='monkey'>-Cahoots-</h2> 
-							</a>
 						</div>
 						<div class=" animated bounceIn">
 							<h3 class='portfolioDescriptor'>A place to meet people and work on creative projects together</h3>
@@ -156,20 +154,19 @@ back-img="images/beautiful.jpg"
 				</div>
 
 				<div class="col-md-3 col-md-offset-1"> 
-					<div class="animatedParent">
+					<div class="animatedParent" ng-click='doomLink()' >
 						<div data-appear-top-offset='-500px' class="animated bounceIn" id='doom'>
-							<a href="http://alpinemicrobe.com/TheEncroachingDoom">
 							<img src='images/doomBig.jpg' style='max-width:100%;
 		                    max-height:90%;'>
-							<h2 class='monkey'>-The Encroaching Doom-</h2> 
+							<h2 class='monkeyDoom'>-The Encroaching Doom-</h2> 
 							</a>
 						</div>
 						<div class="animated bounceIn">
-							<h3 class='portfolioDescriptor'>Eat the purples before time runs out!</h3>
+							<h3 class='portfolioDescriptor'>Eat the purples before time runs out! (browser only)</h3>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-3 col-md-offset-1"> 
+				<!-- <div class="col-md-3 col-md-offset-1"> 
 					<div class="animatedParent">
 						<div id='boken' data-class-in="" class="animated bounceIn" data-class-out="out-animation">
 							<a href="https://boken-app.herokuapp.com/">
@@ -182,17 +179,15 @@ back-img="images/beautiful.jpg"
 							<h3 class='portfolioDescriptorBoken'>Mobile urban adventure app</h3>
 						</div>
 					</div>
-				</div>
+				</div> -->
 			</div>
 			<div class="row secondRow">
-				<div class="col-md-3"> 
-					<div class="animatedParent">
+				<div class="col-md-3 col-md-offset-1"> 
+					<div class="animatedParent" ng-click='alpinemicrobeLink()'>
 						<div id='alpine' data-class-in="" data-class-out="out-animation" class="animated bounceIn">
-							<a href="http://alpinemicrobe.com/">
 							<img src='images/alpinemicrobe.jpg' style='max-width:100%;
 		                    max-height:90%;'>
-							<h2 class='monkey' >-Alpine Microbe-</h2> 
-							</a>
+							<h2 class='monkey' >-Alpine Microbe-</h2>
 						</div>
 						<div class="animated bounceIn">
 							<h3 class='portfolioDescriptor'>Game Hub/Soundcloud</h3>
@@ -200,16 +195,26 @@ back-img="images/beautiful.jpg"
 					</div>
 				</div>
 				<div class="col-md-3 col-md-offset-1">
-					<div class="animatedParent">
+					<div class="animatedParent" ng-click='flyingpunchLink()'>
 						<div id='alpine' data-class-in="" data-class-out="out-animation" class="animated bounceIn">
-							<a href="http://alpinemicrobe.com/FlyingPunch">
 							<img src='images/FlyingPunchScreenshot.png' style='max-width:100%;
 		                    max-height:90%;'>
 							<h2 class='monkey'>-Flying Punch-</h2> 
-							</a>
 						</div>
 						<div class="animated bounceIn">
 							<h3 class='portfolioDescriptor'>A turn based fighting game</h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="animatedParent" ng-click='responsivetableLink()'>
+						<div id='alpine' data-class-in="" data-class-out="out-animation" class="animated bounceIn">
+							<img src='images/biotable.png' style='max-width:100%;
+		                    max-height:90%;'>
+							<h2 class='monkey'>-Responsive Table-</h2> 
+						</div>
+						<div class="animated bounceIn">
+							<h3 class='portfolioDescriptor'>An example of a responsive table built in angular for a lab</h3>
 						</div>
 					</div>
 				</div>
@@ -225,7 +230,7 @@ back-img="images/beautiful.jpg"
 		<div class='about-container'>
 			<div class='row aboutRow1' >
 				<div class="col-md-12 aboutText">
-					<h3 class='aboutDiv firstAboutDiv text-center'> I'm a full stack web developer based out of San Francisco, <br> fluent in Javascript, Angular, React, and libraries like jQuery, <br> Angular Material, Bootstrap and UI Bootstrap.
+					<h3 class='aboutDiv firstAboutDiv text-center'> I'm a full stack web developer based out of San Francisco, <br> fluent in JavaScript, Angular, React, and libraries like jQuery, <br> Angular Material, Bootstrap and UI Bootstrap.
 					<br>I'm dedicated to finding innovative ways to translate data <br> into a polished user experience. </h3>
 				</div>
 			</div>

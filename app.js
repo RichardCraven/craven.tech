@@ -13,6 +13,8 @@ app.directive('backImg', function(){
     };
 });
 
+
+
 app.controller('MainController', function($scope, $interval){
 	window.scope=$scope
 	$scope.showMain = true;
@@ -34,9 +36,37 @@ app.controller('MainController', function($scope, $interval){
 		$scope.showPortfolio = false;
 		$scope.showResume = true;
 	}
-
+	$scope.cahootsLink = function(){
+		window.open("http://cahoots.live")
+	}
+	$scope.alpinemicrobeLink = function(){
+		window.open("http://alpinemicrobe.com/")
+	}
+	$scope.doomLink = function(){
+		window.open("http://alpinemicrobe.com/TheEncroachingDoom/")
+	}
+	$scope.flyingpunchLink = function(){
+		window.open("http://alpinemicrobe.com/FlyingPunch")
+	}
+	$scope.responsivetableLink = function(){
+		window.open("http://alpinemicrobe.com/responsive_table")
+	}
 
 });
+
+// TRANSPARENCY BAR FADE TO BLACK
+var screenHeight = $(window).height()
+var fadePoint = screenHeight - 50
+// console.log('screen height is: '+screenHeight)
+// console.log('fadePoint is: '+fadePoint)
+function potatoeScroll(ev){
+	// console.log(window.pageYOffset)
+    if(window.pageYOffset>fadePoint)$('.navbar').css("background-color", "black")
+    else $('.navbar').css("background-color", "transparent")
+    
+}
+window.onscroll=potatoeScroll
+
 
 $('.showHead').click(function(){
 	function showHead() {
