@@ -1,3 +1,24 @@
+$(function() {
+	$.scrollify({
+			section : ".section",
+			sectionName : "",
+			interstitialSection : "",
+			easing: "easeOutExpo",
+			scrollSpeed: 1100,
+			offset : 0,
+			scrollbars: true,
+			standardScrollElements: "",
+			setHeights: true,
+			overflowScroll: true,
+			updateHash: true,
+			touchScroll:true,
+			before:function() {},
+			after:function() {},
+			afterResize:function() {},
+			afterRender:function() {}
+	});
+});
+
 var app = angular.module('myPage',['ngAnimate']);
 // ,'ui.bootstrap'
 app.directive('backImg', function(){
@@ -12,7 +33,6 @@ app.directive('backImg', function(){
         });
     };
 });
-
 
 
 app.controller('MainController', function($scope, $interval){

@@ -3,10 +3,13 @@ body {
     height: 100%;
     background-color:black;
 }
-
-html {
+html,body
+{
     width: 100%;
     height: 100%;
+    margin: 0px;
+    padding: 0px;
+    /*overflow-x: hidden; */
 }
 
 .navbar {
@@ -96,11 +99,48 @@ html {
   font-family: 'Jura', sans-serif;
 }
 .contentContainer{
-	/*position: fixed;*/
-	/*height: 100%;*/
-	width: 100%;
-	display: -webkit-box;
-	-webkit-box-orient: vertical
+  /*position: fixed;*/
+  /*height: 100%;*/
+  width: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical
+}
+.dannaBreen{
+  padding-top: 13px;
+}
+.dannaBreen h2, .dannaBreen h3{
+  width: 321px;
+}
+.responsiveTable h2, .responsiveTable h3, .responsiveTable img{
+  width: 321px;
+}
+.alpineMicrobe h2, .alpineMicrobe h3, .alpineMicrobe img{
+  width: 321px;
+}
+.flyingPunch h2, .flyingPunch h3, .flyingPunch img{
+  width: 321px;
+}
+.col-md-4 .dannaBreen img{
+  max-width:321px !important;
+}
+#cahoots{
+  padding-top:3px;
+}
+#cahoots img{
+  max-width: 321px;
+  height: 200px;
+}
+#cahoots h2{
+  width:321px;
+}
+.cahoots .bounceIn h3{
+  width: 321px;
+}
+#doom{
+  padding-top:26px;
+}
+#doom img{
+  max-width: 321px;
 }
 #spacer{
     width: 100px;
@@ -109,7 +149,9 @@ html {
   position:relative;
   z-index:10000;
 }
-
+.doom h2, .doom h3{
+  width: 321px;
+}
 .col-centered{
     float: none;
     margin: 0 auto;
@@ -191,6 +233,10 @@ html {
   margin: 0 auto;
 }
 
+.row{
+  margin:0;
+}
+
 /*@media only screen and (min-height: 50vh) {
     
 }*/
@@ -204,7 +250,7 @@ html {
   margin-top: -5%;
 }
 .firstRow{
-  margin-top: -2%;
+  margin-top: 2%;
   margin-bottom: 15px;
 }
 @media screen 
@@ -626,8 +672,8 @@ transform: translateX(80px);
   position:fixed;
   color:#fbf2bc;
   z-index:1000001;
-  margin-top:2%;
-  margin-left:35%;
+  margin-top:1%;
+  margin-left:34.5%;
   color:#9d9d9d;
 }
 .phonenum{
@@ -635,7 +681,7 @@ transform: translateX(80px);
   position:fixed;
   color:#fbf2bc;
   z-index:1000001;
-  margin-top:2%;
+  margin-top:1%;
   margin-left:57%;
   color:#9d9d9d;
 }
@@ -711,6 +757,7 @@ transform: translateX(80px);
     }
     
 }
+
 
 
 
