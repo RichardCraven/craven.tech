@@ -106,10 +106,7 @@ html,body
   display: -webkit-box;
   -webkit-box-orient: vertical
 }
-.dannaBreen{
-  padding-top: 13px;
-}
-.dannaBreen h2, .dannaBreen h3{
+.dannaBreen h2, .dannaBreen h3, .dannaBreen img{
   width: 321px;
 }
 .responsiveTable h2, .responsiveTable h3, .responsiveTable img{
@@ -127,14 +124,8 @@ html,body
 .doom h2, .doom h3, .doom img{
   width: 321px;
 }
-.col-md-4 .dannaBreen img{
-  max-width:321px;
-}
 #cahoots{
   padding-top:3px;
-}
-#doom{
-  padding-top:26px;
 }
 #spacer{
     width: 100px;
@@ -246,6 +237,7 @@ html,body
 .firstRow{
   margin-top: 2%;
   margin-bottom: 15px;
+  height: 340px;
 }
 @media screen 
   and (min-height: 850px)  
@@ -802,7 +794,16 @@ transform: translateX(80px);
   height: 100vh !important;
 }
 
-
+.hoverImages {
+  -webkit-transition: margin 0.5s ease-out;
+  -moz-transition: margin 0.5s ease-out;
+  -o-transition: margin 0.5s ease-out;
+}
+ 
+.hoverImages:hover {
+  cursor:pointer;
+  margin-top: -5px;
+}
 
 
 
