@@ -27,7 +27,7 @@ app.directive('backImg', function(){
             element.css({
                 'background-image': 'url(' + value +')',
                 'background-size' : '100% 100%',
-                'background-repeat': 'repeat-y'
+                'background-repeat': 'no-repeat'
 
             });
         });
