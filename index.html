@@ -13,6 +13,7 @@
 	<!-- load bootstrap -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 
+	<link rel="stylesheet" type='text/css' href="main.css">
 	<!-- scrolling nav -->
 	<!-- <link href="css/scrolling-nav.css" rel="stylesheet"> -->
 
@@ -28,14 +29,13 @@
 
 	<!-- font family -->
 	<link href='https://fonts.googleapis.com/css?family=Jura' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type = 'text/css' href="main.css">
 </head>
 <!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
 <body 
  id="page-top" data-spy="scroll" data-target=".navbar-fixed-top"
- ng-controller='MainController'
- back-img="images/beautiful.jpg"
+ ng-controller='MainController' style='background-color:black'
 >
+<div class="loader"></div>
 	<!-- Navbar -->
 	<nav class="navbar transparent navbar-inverse navbar-static-top  nav-tabs navbar-fixed-top hr" role='navigation' style='z-index:100000'>
 	  	<div class='navContainer'>
@@ -44,18 +44,19 @@
 		    <ul class="nav navbar-nav">
 		    </ul>
 		    <ul class="nav navbar-nav navbar-right poptarts">
-		        <li class="nav-item">
-		          <a class="nav-link page-scroll" ng-click='' href="#page-top">Home </a>
+		        <li class="nav-item homeButton" >
+		          <a class="nav-link " ng-click='' href="">Home </a>
 		        </li>
-		        <li class="nav-item">
-		          <a class="nav-link page-scroll" ng-click='' href="#portfolio">Portfolio</a>
+		        <li class="nav-item portfolioButton" >
+		          <a class="nav-link " ng-click='' href="">Portfolio</a>
 		        </li>
-		        <li class="nav-item">
-		          <a class="nav-link page-scroll showHead" href="#about" >About</a>
+		        <li class="nav-item aboutButton" >
+		          <a class="nav-link  showHead" href="" >About</a>
 		        </li>
 		        <li class='nav-item active'>
 		        	<div id='spacer'></div>
 		        </li>
+		        <!-- javascript:void(0) -->
 		    </ul>
 <!-- 	      <form class="form-inline pull-xs-right">
 	        <input class="form-control" type="text" placeholder="Search">
@@ -63,8 +64,8 @@
 	      </form> -->
 		</div>
 	</nav>
-	<a class='email'>richard.craven85@gmail.com</a>
-	<a class='phonenum'>(650)799-4285</a>
+	<a class='email contactEmail' href="mailto:richard.craven85@gmail.com?Subject=Hello" target="_top">Email</a>
+	<!-- <a class='phonenum'>(650)799-4285</a> -->
 <!-- 	<a style='margin-top:100px' class='btn btn-inv btn-lg' data-direction='left'>Contact</a>
  -->	<div id="wrapper">
 	<!-- Sidebar -->
@@ -76,10 +77,10 @@
 	            </a>
 	        </li>
 	        <li >
-	            <a class="nav-link page-scroll" href="#portfolio">Portfolio</a>
+	            <a class="nav-link portfolioButton" href="#">Portfolio</a>
 	        </li>
 	        <li>
-	            <a class="nav-link page-scroll showHead" href="#about">About</a>
+	            <a class="nav-link aboutButton showHead" href="#">About</a>
 	        </li>
 	        <!-- <li>
 	            <a href="#">Team</a>
@@ -88,7 +89,7 @@
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contact <span class="caret"></span></a>
 	          <ul class="dropdown-menu" role="menu">
 	            <!-- <li class="dropdown-header"></li> -->
-	            <li ><a href="#">richard.craven85@gmail.com</a></li>
+	            <li class='contactEmail'><a href="mailto:richard.craven85@gmail.com?Subject=Hello" target="_top">Email</a></li>
 	            <li><a href="https://www.linkedin.com/in/richard-craven-082a0816">LinkedIn</a></li>
 	            <!-- <li><a href="#">Something else here</a></li> -->
 	            <!-- <li><a href="#">Separated link</a></li>
@@ -115,7 +116,7 @@
 
 
 	<!-- Main/Section1 -->
-	<section id='home' class='main section'>
+	<section id='home' class='main section' data-section-name="home">
 	<div class='container-fluid contentContainer'>
     <button type="button" class="hamburger" data-toggle="offcanvas">
         <span class="hamb-top"></span>
@@ -124,14 +125,8 @@
     </button>
 	<!-- <div class='mouseOverDiv'></div> -->
 		<div class="row">
-			<div class="col-lg-4 col-md-offset-4 mainDiv papaya" ng-show='showMain'>
+			<div class="col-lg-4 col-md-offset-4 mainDiv papaya" >
 				<p id='mainText'> DEVELOPER</p>
-			</div>
-			<div class="col-lg-4 col-md-offset-4 portfolioDiv papaya" ng-show='showPortfolio' style="clear:both">
-				<p id='portfolioText'> PORTFOLIO</p>
-			</div>
-			<div class="col-lg-4 col-md-offset-4 resumeDiv papaya" ng-show='showResume'>
-				<p id='resumeText'> RESUME</p>
 			</div>
 		</div>
 		<div class="row">
@@ -144,7 +139,7 @@
 
 
 	<!-- Portfolio -->
-	<section id='portfolio' class='portfolio section'>
+	<section id='portfolio' class='portfolio section' data-section-name="portfolio">
 		<div class='container-fluid'>
 			<div class='row firstRow'>
 				<div class="col-md-4"> 
@@ -179,8 +174,7 @@
 					<div class="animatedParent dannaBreen hoverImages">
 						<div  data-class-in="" class="animated bounceIn dannaBreen" data-class-out="out-animation">
 							<a href="https://dannabreendesign.com/">
-							<img src='images/dannaBreen.png' style='max-width:100%;
-		                    max-height:100%;'>
+							<img src='images/dannaBreen.png' '>
 							<h2 class='monkeyDoom'>Danna Breen Design
 							<hr> 
 							</h2> 
@@ -243,7 +237,7 @@
 	<!-- section3  TAKEN OUT-->
 
 	<!-- section4 -->
-	<section id='about' class='about section'>
+	<section id='about' class='about section' data-section-name="about">
 		<div class='about-container'>
 			<div class='row aboutRow1' >
 				<div class="col-md-12 aboutText">
@@ -260,12 +254,12 @@
 				<div class="col-md-12 aboutText">
 					<h3 class='aboutDiv text-center'> I enjoy producing music, film projects,<br> and chasing my dog around the park. <br> Monday nights you can find me at the Hotel Utah open mic, <br> probably bombing. </h3>
 				</div>
+				<div class='easterEgg'>
+					<img class='head animated slideInRight' src="images/floatingHead.png" alt="">
+				</div>
 			</div>
 			<!-- <div class="row" style='margin-top: 10%'> -->
 				<!-- <div class="col-md-12"> -->
-					<div class='easterEgg'>
-						<img class='head animated slideInRight' src="images/floatingHead.png" alt="">
-					</div>
 				<!-- </div> -->
 			<!-- </div> -->
 			
@@ -296,7 +290,7 @@
 	<script src='js/css3-animate-it.js'></script>
 
 	<!-- Scrolling Nav JavaScript -->
-	<script src="js/jquery.easing.min.js"></script>
+	<!-- <script src="js/jquery.easing.min.js"></script> -->
 	<!-- <script src="js/scrolling-nav.js"></script> -->
 	
 

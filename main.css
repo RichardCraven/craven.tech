@@ -1,8 +1,27 @@
 body {
     width: 100%;
     height: 100%;
+    /*background-repeat: no-repeat;*/
     background-color:black;
-    background-repeat: no-repeat;
+    background-size:cover;
+}
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+.loader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background-color:black;
+  background: url('GIFs/circle.gif');
+  /*background: url('GIFs/triangle.jpg') 50% 50% no-repeat rgb(249,249,249);*/
+  background-repeat:no-repeat;
+ background-size:cover;
+ background-position: center;
 }
 html,body
 {
@@ -12,11 +31,20 @@ html,body
     padding: 0px;
     /*overflow-x: hidden; */
 }
-
+.contactEmail:hover{
+  text-decoration:none;
+}
+.email:hover{
+  color:hotPink;
+}
 .navbar {
+  display:none;
    background-color: transparent;
    background: transparent;
    border-color: transparent;
+}
+.email,.phonenum{
+  display:none;
 }
 .mouseOverDiv{
   height: 100vh;
@@ -61,7 +89,7 @@ html,body
     border-top-left-radius: 100px;
     border-bottom-right-radius: 100px;
     font-family: 'Jura', sans-serif;
-    display: inline-block;
+    /*display: inline-block;*/
     font-size:3em;
     color: white;
     text-align: center;
@@ -75,7 +103,7 @@ html,body
   opacity: 0;
 }
 .portfolioDiv.ng-show.resumeDiv.ng-show,.mainDiv.ng-show {
-  opacity: 1;
+  /*opacity: 1;*/
 }
 #portfolioText,#resumeText,#mainText{
 	position: relative;
@@ -105,6 +133,9 @@ html,body
   width: 100%;
   display: -webkit-box;
   -webkit-box-orient: vertical
+}
+.dannaBreen img{
+  height: 100%`;
 }
 .dannaBreen h2, .dannaBreen h3, .dannaBreen img{
   width: 321px;
@@ -182,7 +213,7 @@ html,body
     line-height: 2.0;
     color: #dedede;
     font-family: 'Jura', sans-serif;
-
+    text-align:left;
 }
 .about-container{
   /*height: 100vh;*/
@@ -242,7 +273,6 @@ html,body
 @media screen 
   and (min-height: 850px)  
   {
-    
     .firstAboutDiv{
       margin-top:0% ;
     }
@@ -713,6 +743,7 @@ transform: translateX(80px);
         transition: 2s ease-in;
         margin-top: -55%;
     }
+
     .firstAboutDiv{
       margin-top:30%;
     }
@@ -751,7 +782,7 @@ transform: translateX(80px);
       border-top-left-radius: 0;
       border-bottom-right-radius: 0;
       font-family: 'Jura', sans-serif;
-      display: inline-block;
+      /*display: inline-block;*/
       font-size: 3em;
       color: white;
       text-align: center;
@@ -804,7 +835,11 @@ transform: translateX(80px);
   cursor:pointer;
   margin-top: -5px;
 }
-
+img.head{
+      position: absolute;
+      margin-top: 6%;
+      margin-left: 63%;
+    }
 
 
 
