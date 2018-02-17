@@ -28,11 +28,84 @@ $('.aboutButton').click(function(){
 	$.scrollify.move("#about");
 })
 
-
+var typewriter = function(string, interval) {
+  var interval = interval || 100;
+  var index = 0;
+  var typewriterMessage = setInterval(function(){ 
+  	$('#mainText').text(string.slice(0, index))
+  	index++
+  	if(index > string.length){
+  		clearInterval(typewriterMessage);
+  	};
+  }, interval);
+};
 
 window.onload = function(){
-$('li.homeButton').addClass('active')
-}
+ var timer = setTimeout( function(){
+ 	$('.mainDiv').css('opacity',1)
+	 typewriter('DESIGNER', 40);
+	 $('#sidebar-wrapper').stop().animate({left:"0px", opacity:1},500); 
+	 var timer2 = setTimeout(function(){
+	 	typewriter('MUSICIAN', 40);
+	 },1000);
+	 var timer3 = setTimeout(function(){
+	 	typewriter('FUTURIST', 40);
+	 },1900);
+	 var timer4 = setTimeout(function(){
+	 	typewriter('DEVELOPER', 40);
+	 },2800);
+	 var timer5 = setTimeout(function(){
+	 	$('.mainDiv').css('background-color', 'black');
+	 	$('.mainDiv').css('opacity', 0.5);
+	 	var timer6 = setTimeout(function(){dots()},1000);
+	 },3100);
+     // var hide = setTimeout( function(){
+ 	   //  $('#sidebar-wrapper').stop().animate({left: '-150px', opacity:0},500);
+     // }, 3000);
+ }, 500);
+};
+
+var dots = function(){
+	$('#dot1').css('opacity','1')
+	var dotTimer1 = setTimeout(function (){
+		$('#dot2').css('opacity','1')
+	},50);
+	var dotTimer2 = setTimeout(function (){
+		$('#dot3').css('opacity','1')
+	},100);
+	var dotTimer3 = setTimeout(function (){
+		$('#dot4').css('opacity','1')
+	},150);
+	var dotTimer4 = setTimeout(function (){
+		$('#dot5').css('opacity','1')
+	},200);
+	var dotTimer5 = setTimeout(function (){
+		$('#dot1').css('opacity','0')
+	},500);
+	var dotTimer6 = setTimeout(function (){
+		$('#dot2').css('opacity','0')
+	},550);
+	var dotTimer7 = setTimeout(function (){
+		$('#dot2').css('opacity','0')
+	},600);
+	var dotTimer8 = setTimeout(function (){
+		$('#dot3').css('opacity','0')
+	},650);
+	var dotTimer9 = setTimeout(function (){
+		$('#dot4').css('opacity','0')
+	},700);
+	var dotTimer10 = setTimeout(function (){
+		$('#dot5').css('opacity','0')
+	},750);
+};
+
+// $('.sidebar-nav li').on( "mouseEnter", function(){
+// 	console.log('mouseEntered')
+// });
+
+
+
+
 
 
 $('body').addClass('stop-scrolling')
@@ -50,7 +123,7 @@ $('body').css('background-color','black')
 // $('body').css('background-image','url(images/beautiful.jpg)')
 
 
-$('body').css('background-image','url(images/beautiful_smaller.jpg)')
+$('body').css('background-image','url(images/beautiful.jpg)')
 
 $(window).load(function() {
 	$(".loader").fadeOut("slow");
@@ -81,10 +154,29 @@ var app = angular.module('myPage',['ngAnimate']);
 // });
 
 
-app.controller('MainController', function($scope, $interval){
+app.controller('MainController', function($scope, $interval, $timeout){
 	window.scope=$scope
 	
-	
+	$scope.showPortfolio = true;
+	$scope.showHiddenPortfolio = false;
+
+	$scope.previewTypewriter = function(type, string, interval) {
+	  var interval = interval || 100;
+	  var index = 0;
+
+	  var el = type + 'Text';
+	  $('#'+el).html = '';
+	  $scope.previewTypewriterMessage = setInterval(function(){ 
+	  	$('#'+el).html(string.slice(0, index))
+	  	index++
+	  	if(index > string.length){
+	  		clearInterval($scope.previewTypewriterMessage);
+	  	};
+	  }, interval);
+	};
+	$scope.mobiusLink = function(){
+		window.open("http://mobiusdimension.io")
+	}
 	$scope.cahootsLink = function(){
 		window.open("http://cahoots.live")
 	}
@@ -100,7 +192,114 @@ app.controller('MainController', function($scope, $interval){
 	$scope.responsivetableLink = function(){
 		window.open("http://alpinemicrobe.com/responsive_table")
 	}
+	$scope.dannaBreenDesignLink = function(){
+		window.open("http://dannabreendesign.com/")
+	}
+	$scope.mock1Link = function(){
+		window.open("http://craven.tech/mockup1")
+	}
+	$scope.scrollPortfolioRight = function(){
+		
+		// animated slideInRight
+		$('.cahoots').removeClass('slideInLeft').addClass('slideOutLeft')
+		$('.mobius').removeClass('slideInLeft').addClass('slideOutLeft')
+		$('.dannaBreen').removeClass('slideInLeft').addClass('slideOutLeft')
+		$(".rightArrow > img").removeClass('slideInLeft').addClass('slideOutLeft')
+	    $timeout(function() {
+	  	 $scope.showPortfolio = false;
+	  	 $scope.showHiddenPortfolio = true;
 
+	  	 $('.hiddenPortfolio').css('display','block')
+	  	 $(".leftArrow > img").css({"opacity": "1", "-webkit-opacity": "1", "-moz-opacity": "1"});
+
+	  	 $('.cahoots2').removeClass('slideOutRight').addClass('slideInRight');
+	  	 $('.mobius2').removeClass('slideOutRight').addClass('slideInRight');
+	  	 $('.dannaBreen2').removeClass('slideOutRight').addClass('slideInRight');
+	  	 $(".leftArrow > img").removeClass('slideOutRight').addClass('slideInRight');
+	    }, 775);		
+	}
+
+	$scope.scrollPortfolioLeft = function(){
+
+		$('.cahoots2').removeClass('slideInRight').addClass('slideOutRight');
+		$('.mobius2').removeClass('slideInRight').addClass('slideOutRight');
+		$('.dannaBreen2').removeClass('slideInRight').addClass('slideOutRight');
+		$(".leftArrow > img").removeClass('slideInRight').addClass('slideOutRight')
+
+	    $timeout(function() {
+	  	 $scope.showPortfolio = true;
+	  	 $scope.showHiddenPortfolio = false;
+	  	 $('.cahoots').removeClass('slideOutLeft').addClass('slideInLeft');
+	  	 $('.mobius').removeClass('slideOutLeft').addClass('slideInLeft');
+	  	 $('.dannaBreen').removeClass('slideOutLeft').addClass('slideInLeft');
+	  	 $(".rightArrow > img").removeClass('slideOutLeft').addClass('slideInLeft');
+	    }, 775);
+	}
+
+	$scope.showPreview = false;
+	$scope.showPreviewValue = '';
+
+	$scope.showPreviewAs = function(type){
+		switch(type) {
+		  case 'mobius':
+		  $scope.showPreview = true;
+		  $scope.showMobius = true;
+		  var mobiusVideo = document.getElementById("mobiusVideo"); 
+		  mobiusVideo.play();
+		  mobiusVideo.addEventListener('ended',function(){
+		  	mobiusVideo.play();
+		  });
+
+		  $scope.showPreviewValue = type;
+		  // console.log($('#mobius').html)
+		  // $('#mobius').text('') 
+		  // $scope.previewTypewriter('mobius','Mobius is a real-time, multiplayer space combat game. It sets itself apart from other browser based games with its complexity, graphic quality and a sandbox world. Players can sign up for an account to enjoy a persistant experience',5)
+
+
+		    break
+		  case 'cahoots':
+		  $scope.showPreview = true;
+		  $scope.showCahoots = true;
+		  $scope.showPreviewValue = type;
+		    break;
+		  case 'danna':
+		  $scope.showPreview = true;
+		  $scope.showDanna = true;
+		  $scope.showPreviewValue = type;
+		    break;
+		  case 'mock1':
+		  $scope.showPreview = true;
+		  $scope.showMock1 = true;
+		  $scope.showPreviewValue = type;
+		  var mock1Video = document.getElementById("mock1Video"); 
+		  mock1Video.play();
+		  mock1Video.addEventListener('ended',function(){
+		  	mock1Video.play();
+		  });
+		    break;
+		  case 'mock2':
+		  $scope.showPreview = true;
+		  $scope.showMock2 = true;
+		  $scope.showPreviewValue = type;
+		    break;
+
+		  default:
+		    console.log('no type')
+		    break;
+		}
+	};
+	$scope.showPreviewOff = function(){
+		$scope.showPreview = false;
+		$scope.showMobius = false;
+		$scope.showCahoots = false;
+		$scope.showDanna = false;
+		$scope.showMock1 = false;
+		$scope.showMock2 = false;
+		$('#mobius').html = ''
+		$('#cahoots').html = ''
+		$('#danna').html = ''
+		clearInterval($scope.previewTypewriterMessage)
+	};
 });
 
 // TRANSPARENCY BAR FADE TO BLACK
@@ -110,8 +309,8 @@ var fadePoint = screenHeight - 50
 // console.log('fadePoint is: '+fadePoint)
 function potatoeScroll(ev){
 	// console.log(window.pageYOffset)
-    if(window.pageYOffset>fadePoint)$('.navbar').css("background-color", "black")
-    else $('.navbar').css("background-color", "transparent")
+    // if(window.pageYOffset>fadePoint)$('.navbar').css("background-color", "black")
+    // else $('.navbar').css("background-color", "transparent")
     
 }
 window.onscroll=potatoeScroll
@@ -120,15 +319,27 @@ var aboutPage = $("#about").position().top;
 var portfolioPage = $("#portfolio").position().top; 
 var homePage = $("#home").position().top; 
 $(window).on("scroll", function() {
+var hideTimer1, hideTimer2;
   var scrollPosition = scrollY || pageYOffset;
   if (scrollPosition === aboutPage){
-  	$('.head')[0].style.display = 'block'
-  	var go = setTimeout(showHead, 3500)
+  	$('#sidebar-wrapper').stop().animate({left:"0px", opacity:1},500); 
+  	// window.clearTimeout(hideTimer2)
+  	// hideTimer1 = setTimeout( function(){
+
+ 	 //    $('#sidebar-wrapper').stop().animate({left: '-150px', opacity:0},500);
+   //   }, 10000);
+  	// $('.head')[0].style.display = 'block'
+  	// var go = setTimeout(showHead, 3500)
   	$('li.aboutButton').addClass('active')
   	$('li.homeButton').removeClass('active')
   	$('li.portfolioButton').removeClass('active')
   }
   if (scrollPosition === portfolioPage ){
+  	$('#sidebar-wrapper').stop().animate({left:"0px", opacity:1},500); 
+  	// window.clearTimeout(hideTimer1)
+  	// hideTimer2 = setTimeout( function(){
+ 	 //    $('#sidebar-wrapper').stop().animate({left: '-150px', opacity:0},500);
+   //   }, 10000);
   	$('li.aboutButton').removeClass('active')
   	$('li.homeButton').removeClass('active')
   	$('li.portfolioButton').addClass('active')
@@ -140,10 +351,11 @@ $(window).on("scroll", function() {
   }			
 });
 
-function showHead() {
-$('.head')[0].style.display = 'block'
-var go = setTimeout(showHead, 5000);
-}
+
+// function showHead() {
+// $('.head')[0].style.display = 'block'
+// var go = setTimeout(showHead, 5000);
+// }
 
 
 
@@ -157,10 +369,20 @@ var go = setTimeout(showHead, 5000);
 // $('#richard').click(function () {
 //       $('#wrapper').toggleClass('toggled');
 // });
-$('#sidebar-wrapper').hover(function () {
-     $(this).stop().animate({left:"0px", opacity:1},500);     
-   },function () {
-       $(this).stop().animate({left: '-150px', opacity:0  },500);     
-});
+
+// $('#sidebar-wrapper').hover(function () {
+// 	var w = $(this).css('width')
+//      $(this).stop().animate({left:"0px", opacity:1},500); 
+//      var timeWidth2 = setTimeout(function(){
+//      	$('#sidebar-wrapper').css('width',180);    
+//      },400)
+// 	console.log($(this).css('width'))
+//    },function () {
+//        $(this).stop().animate({left: '-150px', opacity:0 },500); 
+//        var timeWidth2 = setTimeout(function(){
+//        	$('#sidebar-wrapper').css('width',330);   
+//        },500)
+// });
+
 
 

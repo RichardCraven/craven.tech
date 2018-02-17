@@ -10,10 +10,17 @@
 
 	
 
+	<!-- <script src="js/changeSVG.js"></script> -->
+	
+
 	<!-- load bootstrap -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
+	
+	<!-- <link rel="stylesheet" href="mobirise/style.css"> -->
 
-	<link rel="stylesheet" type='text/css' href="main.css">
+	
+
+
 	<!-- scrolling nav -->
 	<!-- <link href="css/scrolling-nav.css" rel="stylesheet"> -->
 
@@ -22,13 +29,15 @@
 
 	<!-- load animate-it (for in-view animations)...(not jquery inview) -->
 	<link rel="stylesheet" href="css/animations.css">
+
+	<link rel="stylesheet" type='text/css' href="main.css">
 	
 	<!-- angular -->
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script>
-
 	<!-- font family -->
 	<link href='https://fonts.googleapis.com/css?family=Jura' rel='stylesheet' type='text/css'>
+
 </head>
 <!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
 <body 
@@ -40,10 +49,10 @@
 	<nav class="navbar transparent navbar-inverse navbar-static-top  nav-tabs navbar-fixed-top hr" role='navigation' style='z-index:100000'>
 	  	<div class='navContainer'>
 		    <div id='richard' class="navbar-brand logo">Richard Craven</div>    
-		    <!-- <div>(650)799-4285</div> -->
+			<!-- <a class='email navbar-nav contactEmail' href="mailto:richard.craven85@gmail.com?Subject=Hello" target="_top">contact</a> -->
 		    <ul class="nav navbar-nav">
 		    </ul>
-		    <ul class="nav navbar-nav navbar-right poptarts">
+		   <!--  <ul class="nav navbar-nav navbar-right poptarts">
 		        <li class="nav-item homeButton" >
 		          <a class="nav-link " ng-click='' href="">Home </a>
 		        </li>
@@ -56,36 +65,35 @@
 		        <li class='nav-item active'>
 		        	<div id='spacer'></div>
 		        </li>
-		        <!-- javascript:void(0) -->
-		    </ul>
+		    </ul> -->
 <!-- 	      <form class="form-inline pull-xs-right">
 	        <input class="form-control" type="text" placeholder="Search">
 	        <button class="btn btn-success-outline" type="submit">Search</button>
 	      </form> -->
 		</div>
 	</nav>
-	<a class='email contactEmail' href="mailto:richard.craven85@gmail.com?Subject=Hello" target="_top">Email</a>
 	<!-- <a class='phonenum'>(650)799-4285</a> -->
 <!-- 	<a style='margin-top:100px' class='btn btn-inv btn-lg' data-direction='left'>Contact</a>
- -->	<div id="wrapper">
+ --><div id="wrapper">
 	<!-- Sidebar -->
 	<nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation" >
 	    <ul class="nav sidebar-nav">
-	        <li style='margin-top:150px' class="sidebar-brand">
-	            <a class='nav-link page-scroll' href="#page-top">
+	        <li style='margin-top:150px' id='sideHome'>
+	        	<!-- ^ used to have class="sidebar-brand" -->
+	            <a class='nav-link homeButton' href="#page-top">
 	               Home
 	            </a>
 	        </li>
-	        <li >
+	        <li id='sidePortfolio'>
 	            <a class="nav-link portfolioButton" href="#">Portfolio</a>
 	        </li>
-	        <li>
+	        <li id='sideAbout'>
 	            <a class="nav-link aboutButton showHead" href="#">About</a>
 	        </li>
 	        <!-- <li>
 	            <a href="#">Team</a>
 	        </li> -->
-	        <li class="dropdown">
+	        <li class="dropdown" id='sideContact'>
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contact <span class="caret"></span></a>
 	          <ul class="dropdown-menu" role="menu">
 	            <!-- <li class="dropdown-header"></li> -->
@@ -102,7 +110,7 @@
 	        <li>
 	            <a href="#">Contact</a>
 	        </li> -->
-	        <li>
+	        <li id='sideFollowme'>
 	            <a href="https://twitter.com/pacific_cipher">Follow me</a>
 	        </li>
 	    </ul>
@@ -125,14 +133,16 @@
     </button>
 	<!-- <div class='mouseOverDiv'></div> -->
 		<div class="row">
-			<div class="col-lg-4 col-md-offset-4 mainDiv papaya" >
-				<p id='mainText'> DEVELOPER</p>
+			<div class="col-lg-4 col-md-offset-4 mainDiv papaya">
+				<p id='mainText'> </p>
 			</div>
 		</div>
-		<div class="row">
-			<div id='test-modal' class='modal fade hide'>
-			  <div>Stuff</div>
-			</div>
+		<div class="row dots">
+			<div id='dot1' >. &nbsp; . </div>
+			<div id='dot2' >. &nbsp; . </div>
+			<div id='dot3' >. &nbsp; . </div>
+			<div id='dot4' >. &nbsp; . </div>
+			<div id='dot5' >. &nbsp; . </div>
 		</div>
 	</div>
 	</section>
@@ -141,94 +151,210 @@
 	<!-- Portfolio -->
 	<section id='portfolio' class='portfolio section' data-section-name="portfolio">
 		<div class='container-fluid'>
+			<!-- <div class='row firstRow'> -->
 			<div class='row firstRow'>
-				<div class="col-md-4"> 
-					<div class="animatedParent cahoots hoverImages"  ng-click='cahootsLink()' >
-						<div data-appear-top-offset='-500px' class="animated bounceIn" id='cahoots'>
-							<img src='images/cahootsScreenshot.png'>
-							<h2 class='monkey'>Cahoots
-							<hr>
-							</h2> 
-						</div>
-						<div class=" animated bounceIn">
-							<h3 class='portfolioDescriptor'>Creative collaboration network</h3>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-4"> 
-					<div class="animatedParent doom hoverImages" ng-click='doomLink()' >
-						<div data-appear-top-offset='-500px' class="animated bounceIn" id='doom'>
-							<img src='images/doomBig.jpg'>
-							<h2 class='monkeyDoom'>The Encroaching Doom
-							<hr> 
-							</h2>
-							</a>
-						</div>
-						<div class="animated bounceIn">
-							<h3 class='portfolioDescriptor'>Browser game</h3>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4"> 
-					<div class="animatedParent dannaBreen hoverImages">
-						<div  data-class-in="" class="animated bounceIn dannaBreen" data-class-out="out-animation">
-							<a href="https://dannabreendesign.com/">
-							<img src='images/dannaBreen.png' '>
-							<h2 class='monkeyDoom'>Danna Breen Design
-							<hr> 
-							</h2> 
-							</a>
-						</div>
-						<div class="animated bounceIn">
-							<h3 class='portfolioDescriptor'>Gardening Site</h3>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row secondRow">
-				<div class="col-md-4"> 
-					<div class="animatedParent alpineMicrobe hoverImages" ng-click='alpinemicrobeLink()'>
-						<div id='alpine' data-class-in="" data-class-out="out-animation" class="animated bounceIn">
-							<img src='images/alpinemicrobe.jpg' style='max-width:100%;
-		                    max-height:90%;'>
-							<h2 class='monkey' >Alpine Microbe
-							<hr>
-							</h2>
-						</div>
-						<div class="animated bounceIn">
-							<h3 class='portfolioDescriptor'>Game Hub/Soundcloud</h3>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="animatedParent flyingPunch hoverImages" ng-click='flyingpunchLink()'>
-						<div id='alpine' data-class-in="" data-class-out="out-animation" class="animated bounceIn">
-							<img src='images/FlyingPunchScreenshot.png' style='max-width:100%;
-		                    max-height:90%;'>
-							<h2 class='monkey'>Flying Punch
-							<hr>
-							</h2> 
-						</div>
-						<div class="animated bounceIn">
-							<h3 class='portfolioDescriptor'>A turn based fighting game</h3>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="animatedParent responsiveTable hoverImages" ng-click='responsivetableLink()'>
-						<div id='alpine' data-class-in="" data-class-out="out-animation" class="animated bounceIn">
-							<img src='images/biotable.png' style='max-width:100%;
-		                    max-height:90%;'>
-							<h2 class='monkey'>Responsive Table
+			  <!--  <div flex-gt-sm="50" class='' > -->
+			  		<div class="leftArrow" ng-click='scrollPortfolioLeft()'>
+			  			<img src="images/leftArrow.png" class='animated'>
+			  		</div>
+			  		<div class="col-md-2">
+			  		</div>	
+					<div class="col-md-3"> 
+						<div class="visiblePortfolio animatedParent animated mobius hoverImages" ng-mouseover='showPreviewAs("mobius")' ng-mouseleave='showPreviewOff()' ng-click='mobiusLink()' ng-show='showPortfolio'>
+							<div data-appear-top-offset='-500px' class="animated bounceIn" id='mobius'>
+								<img src='images/cover.png'>
+								<h3 class='monkey'>Mobius Dimension
 								<hr>
-							</h2> 
+								</h3> 
+							</div>
+							<div class=" animated bounceIn">
+								<h4 class='portfolioDescriptor'>Multiplayer Browser Game</h4>
+							</div>
 						</div>
-						<div class="animated bounceIn">
-							<h3 class='portfolioDescriptor'>Responsive table for lab data</h3>
+						<div class="hiddenPortfolio animated slideInLeft mobius2 hoverImages" ng-mouseover='showPreviewAs("mock1")' ng-mouseleave='showPreviewOff()' ng-click='mock1Link()' ng-show='showHiddenPortfolio'>
+							<div data-appear-top-offset='-500px' class="animated bounceIn">
+								<img src='images/IVNoteScreenshot.png'>
+								<h3 class='monkey'>Voice to Text
+								<hr>
+								</h3> 
+							</div>
+							<div class=" animated bounceIn">
+								<h4 class='portfolioDescriptor'>Mockup</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3"> 
+						<div class="visiblePortfolio animatedParent animated cahoots hoverImages" ng-mouseover='showPreviewAs("cahoots")' ng-mouseleave='showPreviewOff()' ng-click='cahootsLink()' ng-show='showPortfolio' >
+							<div data-appear-top-offset='-500px' class="animated bounceIn" id='cahoots'>
+								<img src='images/cahootsScreenshot.png'>
+								<h3 class='monkey'>Cahoots
+								<hr>
+								</h3> 
+							</div>
+							<div class=" animated bounceIn">
+								<h4 class='portfolioDescriptor'>Collaboration network</h4>
+							</div>
+						</div>
+						<div class="hiddenPortfolio animated slideInLeft cahoots2 hoverImages" ng-mouseover='showPreviewAs("mock2")' ng-mouseleave='showPreviewOff()' ng-click='IVNoteLink()' ng-show='showHiddenPortfolio'>
+							<div data-appear-top-offset='-500px' class="animated bounceIn" >
+								<img src='images/companyMockup2.png'>
+								<h3 class='monkey'> Speech to Text Company
+								<hr>
+								</h3> 
+							</div>
+							<div class=" animated bounceIn">
+								<h4 class='portfolioDescriptor'>Mockup</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3"> 
+						<div class="visiblePortfolio animatedParent animated dannaBreen hoverImages" ng-mouseover='showPreviewAs("danna")' ng-mouseleave='showPreviewOff()' ng-click='dannaBreenDesignLink()' ng-show='showPortfolio'>
+							<div  data-class-in="" class="animated bounceIn" data-class-out="out-animation">
+								<img src='images/dannaBreen.png' '>
+								<h4 class='monkeyDoom'>Danna Breen Design
+								<hr> 
+								</h4> 
+								</a>
+							</div>
+							<div class="animated bounceIn">
+								<h4 class='portfolioDescriptor'>Gardening Site</h4>
+							</div>
+						</div>
+						<div class="hiddenPortfolio animated slideInLeft dannaBreen2" ng-mouseover='showPreviewAs("mock3")' ng-mouseleave='showPreviewOff()' ng-click='dannaBreenDesignLink()' ng-show='showHiddenPortfolio'>
+							<div  data-class-in="" class="animated bounceIn dannaBreen2" data-class-out="out-animation">
+								<!-- <img src='images/dannaBreen.png' '> -->
+								<h4 class='monkeyDoom'>
+								<!-- <hr>  -->
+								</h4> 
+								</a>
+							</div>
+							<div class="animated bounceIn">
+								<h4 class=''></h4>
+							</div>
+						</div>
+					</div>
+
+					<div class="rightArrow" ng-click='scrollPortfolioRight()'>
+						<img src="images/rightArrow.png" class='animated'>
+					</div>
+
+			</div>
+			<div class="row secondRow" >
+				<div class="col-md-3 col-sm-2 previewText" >
+					<div class="mobiusPreviewText" ng-show='showMobius'>
+						<div class="row">
+							<div class="col-md-12" >
+								MOBIUS DIMENSION is a real time multiplayer space combat game, currently in Alpha release. It is currently free to play via the browser.
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								Players control a ship in a semi-sandbox universe that must fight to survive in a dangerous envionment. Each player-controlled ship also has a small fleet of squadron ships that obey players' commands.
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								I developed the AI systems, weapons and key commands, UI components, and game logic. I also made all the sound effects and music. I work with my friend who built the back end foundation and an artist who makes the in-game models.
+							</div>
+						</div>
+					</div>
+					<div class="cahootsPreviewText" ng-show='showCahoots'>
+						<div class="row">
+							<div class="col-md-12" >
+								CAHOOTS is a social collaboration platform developed with Angular 1.5 and NodeJS on the backend.
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								I have a passion for creative projects. In the past I've worked on various projects and found myself wishing I could assemble a team of people to share my vision. Unable to find a local hub for creative people I took it upon myself to build one.
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								The app has gone through several revisions to improve the aesthetic and UX. The release target is March 2018. Stay tuned for updates!
+							</div>
+						</div>
+					</div>
+					<div class="dannaPreviewText" ng-show='showDanna'>
+						<div class="row">
+							<div class="col-md-12" >
+								DANNA BREEN DESIGN is simple splash page website to showcase a landscape design business in the SF Bay Area. 
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								I worked closely with the owner to make it exactly how she wanted- <br> several panels with pictures and testimonials, and a contact page.
+							</div>
+							
+						</div>
+					</div>
+					<div class="dannaPreviewText" ng-show='showMock1'>
+						<div class="row">
+							<div class="col-md-12" >
+								<br>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12" >
+								<br>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12" >
+								<br>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12" >
+								<br>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								MOCK UP 1 is a web page for a mock speech-to-text services company. 
+								 <!-- <br> several panels with pictures and testimonials, and a contact page. -->
+							</div>
 						</div>
 					</div>
 				</div>
+				<div ng-show='showPreview' class="col-md-8 preview"> 
+					<!-- {{showPreviewValue}} -->
+					<div ng-show='showMobius' class="row mobiusPreview">
+						<div class="col-md-12" id='mobiusText'>
+						</div>
+							<video id="mobiusVideo" preload muted >
+      							<source src="vids/mobiusPreview.mp4" type="video/mp4">
+    	 					</video>
+					</div>
+					<div ng-show='showCahoots' class="row cahootsPreview">
+						<div class="col-md-12" id='cahootsText'>
+							
+						</div>
+						<!-- <div class="col-md-4">
+							HO
+						</div>
+						<div class="col-md-4">
+							OTS
+						</div> -->
+					</div>
+					<div ng-show='showDanna' class="row dannaPreview">
+						<div class="col-md-12" id='dannaText'>
+							
+						</div>
+					</div>
+					<div ng-show='showMock1' class="row mockPreview">
+						<div class="col-md-12" id='mock1Text'>
+						</div>
+							<video id="mock1Video" preload muted >
+      							<source src="vids/mockup1Preview.mp4" type="video/mp4">
+    	 					</video>
+					</div>
+				</div>	
+			</div>
+			<div class="row thirdRow">
+				<!-- <div class="col-md-2"> 
+
+				</div> -->
 			</div>
 		</div>
 	</section>
@@ -241,18 +367,18 @@
 		<div class='about-container'>
 			<div class='row aboutRow1' >
 				<div class="col-md-12 aboutText">
-					<h3 class='aboutDiv firstAboutDiv text-center'> I'm a full stack web developer based out of San Francisco, <br> fluent in JavaScript, Angular, React, and libraries like jQuery, <br> Angular Material, Bootstrap and UI Bootstrap.
-					<br>I'm dedicated to finding innovative ways to translate data <br> into a polished user experience. </h3>
+					<h3 class='aboutDiv firstAboutDiv text-center'> I'm a full stack web and game developer <br> based out of San Francisco, CA / Vancouver, BC. <br> Fluent in JavaScript, Angular, React, and libraries like <br> jQuery, Angular Material, Bootstrap and UI Bootstrap.
+					<br>I'm dedicated to creating polished UI/UX, <br> and have an eye for minimalist design.</h3>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12 aboutText">
-					<h3 class='aboutDiv text-center'> With an eclectic technical background in preclinical research, <br> small company quality assurance, and database management, <br> I'm comfortable in a fast paced environment <br> with both corporate and small business culture. </h3>
+					<h3 class='aboutDiv text-center'> I have backgrounds in game development, <br> biotech, and sound design. <br>  </h3>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12 aboutText">
-					<h3 class='aboutDiv text-center'> I enjoy producing music, film projects,<br> and chasing my dog around the park. <br> Monday nights you can find me at the Hotel Utah open mic, <br> probably bombing. </h3>
+					<h3 class='aboutDiv text-center'> I enjoy producing music and film projects;<br> a dream of mine is to run a creative co-op.<br> </h3>
 				</div>
 				<div class='easterEgg'>
 					<img class='head animated slideInRight' src="images/floatingHead.png" alt="">
