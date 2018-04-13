@@ -1,4 +1,6 @@
 $(function() {
+console.log(this)
+
 	$.scrollify({
 			section : ".section",
 			sectionName : "section-name",
@@ -39,6 +41,14 @@ var typewriter = function(string, interval) {
   	};
   }, interval);
 };
+
+$(window).load(function() {
+	$(".loader").fadeOut("slow");
+	$('.navbar').css('display','block');
+	$('.email').css('display','block');
+	$('.phonenum').css('display','block')
+	$('body').removeClass('stop-scrolling')
+})
 
 window.onload = function(){
  var timer = setTimeout( function(){
@@ -125,13 +135,7 @@ $('body').css('background-color','black')
 
 $('body').css('background-image','url(images/beautiful.jpg)')
 
-$(window).load(function() {
-	$(".loader").fadeOut("slow");
-	$('.navbar').css('display','block');
-	$('.email').css('display','block');
-	$('.phonenum').css('display','block')
-	$('body').removeClass('stop-scrolling')
-})
+
 
 
 
@@ -157,6 +161,10 @@ var app = angular.module('myPage',['ngAnimate']);
 app.controller('MainController', function($scope, $interval, $timeout){
 	window.scope=$scope
 	
+	var firstRow = $('.firstRow');
+	console.log('first row is ', firstRow[0].offsetHeight)
+	$scope.firstRowHeight = firstRow[0].offsetHeight;
+
 	$scope.showPortfolio = true;
 	$scope.showHiddenPortfolio = false;
 
@@ -198,8 +206,16 @@ app.controller('MainController', function($scope, $interval, $timeout){
 	$scope.mock1Link = function(){
 		window.open("http://craven.tech/mockup1")
 	}
+	$scope.mock2Link = function(){
+		window.open("http://craven.tech/mockup2")
+	}
+	$scope.ptolemyLink = function(){
+		window.open("https://soundcloud.com/ptolemy_music")
+	}
 	$scope.scrollPortfolioRight = function(){
 		
+		console.log($scope, $scope.firstRowHeight)
+
 		// animated slideInRight
 		$('.cahoots').removeClass('slideInLeft').addClass('slideOutLeft')
 		$('.mobius').removeClass('slideInLeft').addClass('slideOutLeft')
@@ -216,6 +232,8 @@ app.controller('MainController', function($scope, $interval, $timeout){
 	  	 $('.mobius2').removeClass('slideOutRight').addClass('slideInRight');
 	  	 $('.dannaBreen2').removeClass('slideOutRight').addClass('slideInRight');
 	  	 $(".leftArrow > img").removeClass('slideOutRight').addClass('slideInRight');
+
+	  	 $('.firstRow').css('height', $scope.firstRowHeight)
 	    }, 775);		
 	}
 
@@ -281,6 +299,21 @@ app.controller('MainController', function($scope, $interval, $timeout){
 		  $scope.showPreview = true;
 		  $scope.showMock2 = true;
 		  $scope.showPreviewValue = type;
+		  var mock2Video = document.getElementById("mock2Video"); 
+		  mock2Video.play();
+		  mock2Video.addEventListener('ended',function(){
+		  	mock2Video.play();
+		  });
+		    break;
+		  case 'ptolemy':
+		  $scope.showPreview = true;
+		  $scope.showPtolemy = true;
+		  $scope.showPreviewValue = type;
+		  var mock2Video = document.getElementById("ptolemyVideo"); 
+		  ptolemyVideo.play();
+		  ptolemyVideo.addEventListener('ended',function(){
+		  	ptolemyVideo.play();
+		  });
 		    break;
 
 		  default:
@@ -295,6 +328,7 @@ app.controller('MainController', function($scope, $interval, $timeout){
 		$scope.showDanna = false;
 		$scope.showMock1 = false;
 		$scope.showMock2 = false;
+		$scope.showPtolemy = false;
 		$('#mobius').html = ''
 		$('#cahoots').html = ''
 		$('#danna').html = ''

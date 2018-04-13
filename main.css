@@ -17,7 +17,7 @@ body {
   height: 100%;
   z-index: 9999;
   background-color:black;
-  background: url('GIFs/eye.gif');
+  background: url('GIFs/motion-florian-de-looij-02.gif');
   /*background: url('GIFs/triangle.jpg') 50% 50% no-repeat rgb(249,249,249);*/
   background-repeat:no-repeat;
  background-size:cover;
@@ -96,6 +96,8 @@ html,body
   background-color:black;
   font-family: 'Jura', sans-serif;
   margin: 0 auto;
+  margin-top: 28px;
+  height: 25px;
 }
 .monkey hr {
   border: 1px solid white; padding:0; margin:0 auto;
@@ -117,7 +119,7 @@ html,body
   -webkit-box-orient: vertical
 }
 .dannaBreen img{
-  height: 100%`;
+  height: 100%;
 }
 .dannaBreen h2, .dannaBreen h3, .dannaBreen img{
   width: 100%;
@@ -146,12 +148,6 @@ html,body
 .doom h2, .doom h3, .doom img{
   width: 100%;
 }
-#cahoots{
-  padding-top:3px;
-}
-/*#spacer{
-    width: 100px;
-}*/
 #richard{
   margin-top: 10px;
   position:relative;
@@ -174,9 +170,10 @@ html,body
 .portfolio {
     height:100vh;
     width: 100vw;
-    padding-top: 80px;
+    padding-top: 65px;
     text-align: center;
-    background-image: url('images/carbonFiber.png');
+    /*background-image: url('images/carbonFiber.png');*/
+    background-color: black;
     background-size: cover;
     display:block;
 }
@@ -210,6 +207,7 @@ html,body
 .about-container{
   /*height: 100vh;*/
   width: 100vw;
+  padding-right: 43px;
 }
 .contact {
     height:100vh;
@@ -261,6 +259,7 @@ html,body
   height: 50vh;
   padding-left:5%;
   padding-right: 5%;
+  padding-bottom: 1%;
   /*border: 1px solid yellow;*/
 }
 @media screen 
@@ -813,22 +812,22 @@ transform: translateX(80px);
       transition: all linear 0.5s;
   }
   .dannaBreen h2, .dannaBreen h3, .dannaBreen img{
-    width: 500px;
+    width: 100%;
   }
   .responsiveTable h2, .responsiveTable h3, .responsiveTable img{
-    width: 500px;
+    width: 100%;
   }
   .alpineMicrobe h2, .alpineMicrobe h3, .alpineMicrobe img{
-    width: 500px;
+    width: 100%;
   }
   .flyingPunch h2, .flyingPunch h3, .flyingPunch img{
-    width: 500px;
+    width: 100%;
   }
   .cahoots h2, .cahoots h3, .cahoots img{
-    width: 500px;
+    width: 100%;
   }
   .doom h2, .doom h3, .doom img{
-    width: 500px;
+    width: 100%;
   }
   #cahoots{
     padding-top: 23px;
@@ -849,6 +848,11 @@ transform: translateX(80px);
   -webkit-transition: margin 0.5s ease-out;
   -moz-transition: margin 0.5s ease-out;
   -o-transition: margin 0.5s ease-out;
+}
+
+.hoverImages img, .hoverImages{
+  height: 100%;
+  min-height: 100%;
 }
  
 .hoverImages:hover {
@@ -931,7 +935,7 @@ h2.monkey{
   background-position: center center;
   background-size: contain;
 }
-.mockPreview{
+.mockPreview, .ptolemyPreview{
   height: 100%;
   /*background-image: url('images/dannaBreen_opacity80.png');*/
   background-repeat:no-repeat;
@@ -939,12 +943,7 @@ h2.monkey{
   background-size: contain;
 }
 
-#mobiusVideo{
-  height: 100%;
-  width: 100%;
-}
-
-#mock1Video{
+#mock1Video,#mock2Video,#mobiusVideo, #ptolemyVideo{
   height: 100%;
   width: 100%;
 }
@@ -953,6 +952,7 @@ h2.monkey{
   height: 100%;
   /*border: 1px solid white;*/
   color: white;
+  padding-top: 2%;
 }
 
 .previewText .row{
@@ -1035,7 +1035,38 @@ h2.monkey{
   }
 }*/
 
+.row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+  flex-wrap: wrap;
+}
+.row > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+}
 
+.imgContainer{
+  height: 81%;
+}
+
+@media only screen and (max-width: 1186px) and  (min-width: 1150px){
+  h3.monkey.lottaText{
+    /*color:red;*/
+    font-size: 22px !important;
+    height: 40px;
+  }
+}
+
+@media only screen and (max-width: 1149px){
+  h3.monkey.lottaText{  
+    font-size: 18px;
+    height: 40px;
+  }
+}
+
+/*min max wd :1150-1186*/
 
 
 

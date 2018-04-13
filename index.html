@@ -1,29 +1,20 @@
 <!DOCTYPE html>
 <html ng-app='myPage' lang="en">
-<head>
+<head >
+<!-- 	<link rel="icon" 
+	      type="image/png" 
+	      href="http://orig00.deviantart.net/fbc0/f/2014/073/b/8/glowing_google_chrome_icon__ico__png__by_micahpkay-d6mylpe.png"> -->
+
+	<link rel="icon" 
+	      type="image/png" 
+	      href="images/favicon/floatingHead.png">
+
+
 	<meta charset="UTF-8">
 	<title>craven.tech</title>
-<!-- 	<link rel="stylesheet" href="ui-bootstrap-tpls-1.3.3.min.js"> -->
-
-	<!-- jQuery library -->
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
-
-	
-
-	<!-- <script src="js/changeSVG.js"></script> -->
-	
 
 	<!-- load bootstrap -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-	
-	<!-- <link rel="stylesheet" href="mobirise/style.css"> -->
-
-	
-
-
-	<!-- scrolling nav -->
-	<!-- <link href="css/scrolling-nav.css" rel="stylesheet"> -->
-
 	<!-- load animate -->
 	<link rel="stylesheet" href="http://cdn.jsdelivr.net/animatecss/2.1.0/animate.min.css">
 
@@ -39,7 +30,6 @@
 	<link href='https://fonts.googleapis.com/css?family=Jura' rel='stylesheet' type='text/css'>
 
 </head>
-<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
 <body 
  id="page-top" data-spy="scroll" data-target=".navbar-fixed-top"
  ng-controller='MainController' style='background-color:black'
@@ -52,28 +42,8 @@
 			<!-- <a class='email navbar-nav contactEmail' href="mailto:richard.craven85@gmail.com?Subject=Hello" target="_top">contact</a> -->
 		    <ul class="nav navbar-nav">
 		    </ul>
-		   <!--  <ul class="nav navbar-nav navbar-right poptarts">
-		        <li class="nav-item homeButton" >
-		          <a class="nav-link " ng-click='' href="">Home </a>
-		        </li>
-		        <li class="nav-item portfolioButton" >
-		          <a class="nav-link " ng-click='' href="">Portfolio</a>
-		        </li>
-		        <li class="nav-item aboutButton" >
-		          <a class="nav-link  showHead" href="" >About</a>
-		        </li>
-		        <li class='nav-item active'>
-		        	<div id='spacer'></div>
-		        </li>
-		    </ul> -->
-<!-- 	      <form class="form-inline pull-xs-right">
-	        <input class="form-control" type="text" placeholder="Search">
-	        <button class="btn btn-success-outline" type="submit">Search</button>
-	      </form> -->
 		</div>
 	</nav>
-	<!-- <a class='phonenum'>(650)799-4285</a> -->
-<!-- 	<a style='margin-top:100px' class='btn btn-inv btn-lg' data-direction='left'>Contact</a>
  --><div id="wrapper">
 	<!-- Sidebar -->
 	<nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation" >
@@ -161,75 +131,74 @@
 			  		</div>	
 					<div class="col-md-3"> 
 						<div class="visiblePortfolio animatedParent animated mobius hoverImages" ng-mouseover='showPreviewAs("mobius")' ng-mouseleave='showPreviewOff()' ng-click='mobiusLink()' ng-show='showPortfolio'>
-							<div data-appear-top-offset='-500px' class="animated bounceIn" id='mobius'>
+							<div data-appear-top-offset='-500px' class="animated imgContainer" id='mobius'>
 								<img src='images/cover.png'>
 								<h3 class='monkey'>Mobius Dimension
 								<hr>
 								</h3> 
 							</div>
-							<div class=" animated bounceIn">
+							<div class=" animated">
 								<h4 class='portfolioDescriptor'>Multiplayer Browser Game</h4>
 							</div>
 						</div>
 						<div class="hiddenPortfolio animated slideInLeft mobius2 hoverImages" ng-mouseover='showPreviewAs("mock1")' ng-mouseleave='showPreviewOff()' ng-click='mock1Link()' ng-show='showHiddenPortfolio'>
-							<div data-appear-top-offset='-500px' class="animated bounceIn">
+							<div data-appear-top-offset='-500px' class="animated imgContainer">
 								<img src='images/IVNoteScreenshot.png'>
 								<h3 class='monkey'>Voice to Text
 								<hr>
 								</h3> 
 							</div>
-							<div class=" animated bounceIn">
+							<div class=" animated">
 								<h4 class='portfolioDescriptor'>Mockup</h4>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-3"> 
 						<div class="visiblePortfolio animatedParent animated cahoots hoverImages" ng-mouseover='showPreviewAs("cahoots")' ng-mouseleave='showPreviewOff()' ng-click='cahootsLink()' ng-show='showPortfolio' >
-							<div data-appear-top-offset='-500px' class="animated bounceIn" id='cahoots'>
+							<div data-appear-top-offset='-500px' class="animated imgContainer" id='cahoots'>
 								<img src='images/cahootsScreenshot.png'>
 								<h3 class='monkey'>Cahoots
 								<hr>
 								</h3> 
 							</div>
-							<div class=" animated bounceIn">
+							<div class=" animated">
 								<h4 class='portfolioDescriptor'>Collaboration network</h4>
 							</div>
 						</div>
-						<div class="hiddenPortfolio animated slideInLeft cahoots2 hoverImages" ng-mouseover='showPreviewAs("mock2")' ng-mouseleave='showPreviewOff()' ng-click='IVNoteLink()' ng-show='showHiddenPortfolio'>
-							<div data-appear-top-offset='-500px' class="animated bounceIn" >
+						<div class="hiddenPortfolio animated slideInLeft cahoots2 hoverImages" ng-mouseover='showPreviewAs("mock2")' ng-mouseleave='showPreviewOff()' ng-click='mock2Link()' ng-show='showHiddenPortfolio'>
+							<div data-appear-top-offset='-500px' class="animated imgContainer" >
 								<img src='images/companyMockup2.png'>
-								<h3 class='monkey'> Speech to Text Company
+								<h3 class='monkey lottaText'> Speech to Text Company
 								<hr>
 								</h3> 
 							</div>
-							<div class=" animated bounceIn">
+							<div class=" animated">
 								<h4 class='portfolioDescriptor'>Mockup</h4>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-3"> 
 						<div class="visiblePortfolio animatedParent animated dannaBreen hoverImages" ng-mouseover='showPreviewAs("danna")' ng-mouseleave='showPreviewOff()' ng-click='dannaBreenDesignLink()' ng-show='showPortfolio'>
-							<div  data-class-in="" class="animated bounceIn" data-class-out="out-animation">
+							<div  data-class-in="" class="animated imgContainer" data-class-out="out-animation">
 								<img src='images/dannaBreen.png' '>
-								<h4 class='monkeyDoom'>Danna Breen Design
+								<h3 class='monkey'>Danna Breen Design
 								<hr> 
 								</h4> 
 								</a>
 							</div>
-							<div class="animated bounceIn">
+							<div class="animated">
 								<h4 class='portfolioDescriptor'>Gardening Site</h4>
 							</div>
 						</div>
-						<div class="hiddenPortfolio animated slideInLeft dannaBreen2" ng-mouseover='showPreviewAs("mock3")' ng-mouseleave='showPreviewOff()' ng-click='dannaBreenDesignLink()' ng-show='showHiddenPortfolio'>
-							<div  data-class-in="" class="animated bounceIn dannaBreen2" data-class-out="out-animation">
-								<!-- <img src='images/dannaBreen.png' '> -->
-								<h4 class='monkeyDoom'>
-								<!-- <hr>  -->
-								</h4> 
-								</a>
+						<div class="hiddenPortfolio animated slideInLeft dannaBreen2 hoverImages" ng-mouseover='showPreviewAs("ptolemy")' ng-mouseleave='showPreviewOff()' ng-click='ptolemyLink()' ng-show='showHiddenPortfolio'>
+							<div  data-class-in="" class="animated imgContainer" data-class-out="out-animation">
+								<img src='images/Ptolemy.jpg' '>
+								<h3 class='monkey'>Ptolemy
+								<hr>
+								</h3>
 							</div>
-							<div class="animated bounceIn">
-								<h4 class=''></h4>
+							<div class=" animated">
+								<h4 class='portfolioDescriptor'>Soundcloud</h4>
 							</div>
 						</div>
 					</div>
@@ -237,14 +206,13 @@
 					<div class="rightArrow" ng-click='scrollPortfolioRight()'>
 						<img src="images/rightArrow.png" class='animated'>
 					</div>
-
 			</div>
 			<div class="row secondRow" >
 				<div class="col-md-3 col-sm-2 previewText" >
 					<div class="mobiusPreviewText" ng-show='showMobius'>
 						<div class="row">
 							<div class="col-md-12" >
-								MOBIUS DIMENSION is a real time multiplayer space combat game, currently in Alpha release. It is currently free to play via the browser.
+								MOBIUS DIMENSION is a real time multiplayer space combat game, currently in Alpha release. It is free to play via the browser.
 							</div>
 						</div>
 						<div class="row">
@@ -316,6 +284,62 @@
 							</div>
 						</div>
 					</div>
+					<div class="dannaPreviewText" ng-show='showMock2'>
+						<div class="row">
+							<div class="col-md-12" >
+								<br>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12" >
+								<br>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12" >
+								<br>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12" >
+								<br>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								MOCK UP 2 is a web page for a mock service company. 
+								 <!-- <br> several panels with pictures and testimonials, and a contact page. -->
+							</div>
+						</div>
+					</div>
+					<div class="dannaPreviewText" ng-show='showPtolemy'>
+						<div class="row">
+							<div class="col-md-12" >
+								<br>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12" >
+								<br>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12" >
+								<br>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12" >
+								<br>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								I like to make electronic and acoustic music.
+								 <!-- <br> several panels with pictures and testimonials, and a contact page. -->
+							</div>
+						</div>
+					</div>
 				</div>
 				<div ng-show='showPreview' class="col-md-8 preview"> 
 					<!-- {{showPreviewValue}} -->
@@ -347,6 +371,20 @@
 						</div>
 							<video id="mock1Video" preload muted >
       							<source src="vids/mockup1Preview.mp4" type="video/mp4">
+    	 					</video>
+					</div>
+					<div ng-show='showMock2' class="row mockPreview">
+						<div class="col-md-12" id='mock2Text'>
+						</div>
+							<video id="mock2Video" preload muted >
+      							<source src="vids/mockup2Preview.mp4" type="video/mp4">
+    	 					</video>
+					</div>
+					<div ng-show='showPtolemy' class="row ptolemyPreview">
+						<div class="col-md-12" id='ptolemyText'>
+						</div>
+							<video id="ptolemyVideo" preload muted >
+      							<source src="vids/ptolemyPreview.mp4" type="video/mp4">
     	 					</video>
 					</div>
 				</div>	
@@ -391,19 +429,6 @@
 			
 		</div>
 	</section>
-	<!-- section5 -->
-<!-- 	<section id='contact' class='contact'>
-		<div class='container-fluid'>
-			<div class='row'>
-				<div class="col-md-12">
-					contact
-				</div>
-			</div>
-		</div>
-	</section> -->
-
-
-
 	<!-- jQuery -->
 	<script src="js/jquery.js"></script>
 
