@@ -1,5 +1,5 @@
 $(function() {
-console.log(this)
+console.log(this, angular)
 
 	$.scrollify({
 			section : ".section",
@@ -67,6 +67,8 @@ window.onload = function(){
 	 var timer5 = setTimeout(function(){
 	 	$('.mainDiv').css('background-color', 'black');
 	 	$('.mainDiv').css('opacity', 0.5);
+	 	$('.mainDiv').css('border-top-left-radius', '100px');
+	 	$('.mainDiv').css('border-bottom-right-radius', '100px');
 	 	var timer6 = setTimeout(function(){dots()},1000);
 	 },3100);
      // var hide = setTimeout( function(){
@@ -134,6 +136,12 @@ $('body').css('background-color','black')
 
 
 $('body').css('background-image','url(images/beautiful.jpg)')
+// $('body').css('background-image','url(vids/aurora.mp4)')
+// $('body').css({"background-image": 'url("https://gfycat.com/ifr/UnripeJaggedHorse")'})
+// $('body').css({"background-image": 'url("' + _giphy.image_original_url + '")'});
+
+
+
 
 
 
@@ -183,10 +191,10 @@ app.controller('MainController', function($scope, $interval, $timeout){
 	  }, interval);
 	};
 	$scope.mobiusLink = function(){
-		window.open("http://mobiusdimension.io")
+		window.open("http://play.mobiusdimension.io")
 	}
 	$scope.cahootsLink = function(){
-		window.open("http://cahoots.live")
+		window.open("http://www.cahoots.live")
 	}
 	$scope.alpinemicrobeLink = function(){
 		window.open("http://alpinemicrobe.com/")
@@ -204,10 +212,10 @@ app.controller('MainController', function($scope, $interval, $timeout){
 		window.open("http://dannabreendesign.com/")
 	}
 	$scope.mock1Link = function(){
-		window.open("http://craven.tech/mockup1")
+		window.open("https://craven.tech/mockup1")
 	}
 	$scope.mock2Link = function(){
-		window.open("http://craven.tech/mockup2")
+		window.open("https://craven.tech/mockup2")
 	}
 	$scope.ptolemyLink = function(){
 		window.open("https://soundcloud.com/ptolemy_music")
@@ -217,24 +225,29 @@ app.controller('MainController', function($scope, $interval, $timeout){
 		console.log($scope, $scope.firstRowHeight)
 
 		// animated slideInRight
-		$('.cahoots').removeClass('slideInLeft').addClass('slideOutLeft')
-		$('.mobius').removeClass('slideInLeft').addClass('slideOutLeft')
-		$('.dannaBreen').removeClass('slideInLeft').addClass('slideOutLeft')
-		$(".rightArrow > img").removeClass('slideInLeft').addClass('slideOutLeft')
-	    $timeout(function() {
+		// $('.cahoots').removeClass('slideInLeft').addClass('slideOutLeft')
+		// $('.mobius').removeClass('slideInLeft').addClass('slideOutLeft')
+		// $('.dannaBreen').removeClass('slideInLeft').addClass('slideOutLeft')
+		// $(".rightArrow > img").removeClass('slideInLeft').addClass('slideOutLeft')
+	    // $timeout(function() {
 	  	 $scope.showPortfolio = false;
 	  	 $scope.showHiddenPortfolio = true;
 
-	  	 $('.hiddenPortfolio').css('display','block')
-	  	 $(".leftArrow > img").css({"opacity": "1", "-webkit-opacity": "1", "-moz-opacity": "1"});
+	  	 // $('.hiddenPortfolio').css('display','block')
+	  	 // $(".leftArrow > img").css({"opacity": "1", "-webkit-opacity": "1", "-moz-opacity": "1"});
 
-	  	 $('.cahoots2').removeClass('slideOutRight').addClass('slideInRight');
-	  	 $('.mobius2').removeClass('slideOutRight').addClass('slideInRight');
-	  	 $('.dannaBreen2').removeClass('slideOutRight').addClass('slideInRight');
-	  	 $(".leftArrow > img").removeClass('slideOutRight').addClass('slideInRight');
+	  	 // $('.cahoots2').removeClass('slideOutRight').addClass('slideInRight');
+	  	 // $('.mobius2').removeClass('slideOutRight').addClass('slideInRight');
+	  	 // $('.dannaBreen2').removeClass('slideOutRight').addClass('slideInRight');
+	  	 // $(".leftArrow > img").removeClass('slideOutRight').addClass('slideInRight');
 
-	  	 $('.firstRow').css('height', $scope.firstRowHeight)
-	    }, 775);		
+	  	 // $('.firstRow').css('height', $scope.firstRowHeight)
+	    // }, 775);		
+	}
+	$scope.flip = function(){
+		console.log('in flip function')
+		$scope.showPortfolio = false;
+	  	 $scope.showHiddenPortfolio = true;
 	}
 
 	$scope.scrollPortfolioLeft = function(){
@@ -254,8 +267,8 @@ app.controller('MainController', function($scope, $interval, $timeout){
 	    }, 775);
 	}
 
-	$scope.showPreview = false;
-	$scope.showPreviewValue = '';
+	// $scope.showPreview = false;
+	// $scope.showPreviewValue = '';
 
 	$scope.showPreviewAs = function(type){
 		switch(type) {

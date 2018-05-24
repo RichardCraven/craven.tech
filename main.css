@@ -67,8 +67,8 @@ html,body
 .mainDiv, .portfolioDiv, .resumeDiv{
     top: 42%;
     right:38%;
-    border-top-left-radius: 100px;
-    border-bottom-right-radius: 100px;
+    /*border-top-left-radius: 100px;
+    border-bottom-right-radius: 100px;*/
     font-family: 'Jura', sans-serif;
     /*display: inline-block;*/
     font-size:3em;
@@ -116,7 +116,8 @@ html,body
   /*height: 100%;*/
   width: 100%;
   display: -webkit-box;
-  -webkit-box-orient: vertical
+  box-orient: vertical;
+  -webkit-box-orient: vertical;
 }
 .dannaBreen img{
   height: 100%;
@@ -153,9 +154,6 @@ html,body
   position:relative;
   z-index:10000;
 }
-.doom h2, .doom h3{
-  /*width: 321px;*/
-}
 .col-centered{
     float: none;
     margin: 0 auto;
@@ -172,7 +170,6 @@ html,body
     width: 100vw;
     padding-top: 65px;
     text-align: center;
-    /*background-image: url('images/carbonFiber.png');*/
     background-color: black;
     background-size: cover;
     display:block;
@@ -191,18 +188,20 @@ html,body
 .about {
     height:100vh;
     width: 100vw;
-    padding-top: 150px;
+    padding-top: 80px;
     text-align: left;
-    background-image: url('images/flipped.jpg');
+    /*background-image: url('images/flipped.jpg');*/
+    background: url('GIFs/aurora.gif');
     background-size: cover;
     display:block;
 }
-.aboutText h3{
+.aboutText p{
     margin-left:0px;
     line-height: 2.0;
     color: #dedede;
     font-family: 'Jura', sans-serif;
-    text-align:right;
+    text-align:left;
+    font-size: 1.2em;
 }
 .about-container{
   /*height: 100vh;*/
@@ -244,18 +243,18 @@ html,body
 /*.aboutText h3{
     color: yellow;
 }*/
-/*.aboutRow1 div:{
-    margin-top: 5%;
-}*/
-.firstAboutDiv{
-  margin-top: -5%;
+.aboutRow{
+    margin-top: 70px;
 }
+/* .firstAboutDiv{
+  margin-top: -5%;
+} */
 .firstRow{
   margin-top: 2%;
   margin-bottom: 15px;
 }
 .secondRow{
-  /*margin-top: 50px;*/
+  margin-top: 3%;
   height: 50vh;
   padding-left:5%;
   padding-right: 5%;
@@ -342,12 +341,12 @@ html,body
     width: 15vw;
 }
 /*inview animations*/
-.out-animation {
+/*.out-animation {
 opacity: 0;
 -webkit-transform: translateX(80px);
 -moz-transform: translateX(80px);
 transform: translateX(80px);
-}
+}*/
 
 
 /*~~~SIDE PANEL CSS~~~*/
@@ -796,10 +795,10 @@ transform: translateX(80px);
 /* Large Devices, Wide Screens */
     @media only screen and (min-width : 1441px) {
   .mainDiv{
-      top: 42%;
+      /*top: 42%;
       right: 40%;
-      border-top-left-radius: 0;
-      border-bottom-right-radius: 0;
+*/      /*border-top-left-radius: 0;
+      border-bottom-right-radius: 0;*/
       font-family: 'Jura', sans-serif;
       /*display: inline-block;*/
       font-size: 3em;
@@ -832,22 +831,9 @@ transform: translateX(80px);
   #cahoots{
     padding-top: 23px;
   }
-  div.row.aboutRow1{
-    margin-top: 9%;
-  }
-  .secondRow{
-    margin-top: 50px;
-  }
 }
-
 .section{
   height: 100vh !important;
-}
-
-.hoverImages {
-  -webkit-transition: margin 0.5s ease-out;
-  -moz-transition: margin 0.5s ease-out;
-  -o-transition: margin 0.5s ease-out;
 }
 
 .hoverImages img, .hoverImages{
@@ -886,6 +872,7 @@ img.head{
   color: white;
 }
 #dot1,#dot2,#dot3,#dot4,#dot5{
+  width: 100%;
   opacity: 0;
 };
 
@@ -1065,6 +1052,13 @@ h2.monkey{
     height: 40px;
   }
 }
+@media only screen and (max-height: 776px){
+  .secondRow{
+    margin-top: 0;
+  }
+}
+
+
 
 /*min max wd :1150-1186*/
 
